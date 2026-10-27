@@ -52,7 +52,7 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 15px 20px 15px;
+            padding: 20px 15px 20px 15px;
             overflow: hidden;
         }
 
@@ -98,7 +98,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.55);
+            background: rgba(0, 0, 0, 0.65);
             z-index: 2;
         }
 
@@ -113,23 +113,11 @@
 
         .logo-container img {
             width: 100%;
-            max-width: 140px;
+            max-width: 160px;
             height: auto;
             object-fit: contain;
             filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
         }
-
-        .powered-text {
-            font-size: 12px;
-            font-weight: bold;
-            margin-top: 2px;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
-        }
-
-        .lo-col { color: #0056b3; }   /* Deep Blue */
-        .can-col { color: #ff8500; }  /* Orange */
-        .to-col { color: #cc3700; }   /* Deep Orange */
 
         /* Main Content Area */
         .main-content-area {
@@ -141,12 +129,40 @@
             margin: auto 0;
         }
 
+        /* Glowing & Eye-catching Title */
+        .glowing-title {
+            font-size: 26px;
+            font-weight: 900;
+            color: #ff2a6d;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            text-shadow: 0 0 10px rgba(255, 42, 109, 0.8), 0 0 20px rgba(255, 42, 109, 0.6);
+            animation: glowPulse 1.5s infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% {
+                text-shadow: 0 0 8px #ff2a6d, 0 0 15px #ff2a6d;
+                transform: scale(1);
+            }
+            100% {
+                text-shadow: 0 0 18px #ff2a6d, 0 0 30px #ff0055, 0 0 40px #ff0055;
+                transform: scale(1.03);
+            }
+        }
+
         .text-content {
             font-size: 15px;
-            line-height: 1.45;
+            line-height: 1.5;
             color: #ffffff;
             text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.95);
             font-weight: 500;
+        }
+
+        .highlight-gold {
+            color: #ffcc00;
+            font-weight: bold;
         }
 
         /* Bottom Section: Buttons & Footer */
@@ -161,35 +177,34 @@
         }
 
         .btn {
-            background-color: #ff0055;
+            background: linear-gradient(135deg, #ff0055 0%, #ff5e00 100%);
             color: #ffffff;
             border: none;
-            padding: 13px 25px;
-            font-size: 16px;
+            padding: 14px 25px;
+            font-size: 15px;
             font-weight: bold;
             border-radius: 30px;
             cursor: pointer;
             width: 100%;
-            max-width: 270px;
+            max-width: 290px;
             transition: transform 0.2s, background-color 0.2s;
             text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
             margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
-            background-color: #e0004c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 85, 0.6);
         }
 
         /* Animation for Affiliate Button */
         .animated-btn {
             animation: subtleWiggle 2s infinite ease-in-out;
-            background-color: #00e676;
-            color: #000;
-        }
-
-        .animated-btn:hover {
-            background-color: #00c853;
+            background: linear-gradient(135deg, #00e676 0%, #00b0ff 100%);
+            color: #000000;
+            font-weight: 800;
         }
 
         @keyframes subtleWiggle {
@@ -201,7 +216,7 @@
         /* Footer */
         .footer {
             font-size: 11px;
-            color: #dddddd;
+            color: #cccccc;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
             text-align: center;
         }
@@ -225,7 +240,7 @@
 
         #loading-screen img {
             width: 80%;
-            max-width: 220px;
+            max-width: 200px;
             margin-bottom: 25px;
         }
 
@@ -248,6 +263,7 @@
             font-size: 15px;
             color: #dddddd;
             font-weight: bold;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -270,26 +286,26 @@
             <!-- Top Header -->
             <div class="header-container">
                 <div class="logo-container">
-                    <img src="yox.webp" alt="Logo Banner">
-                </div>
-                <div class="powered-text">
-                    Powered By <span class="lo-col">Lo</span><span class="can-col">can</span><span class="to-col">to</span>
+                    <img src="yox.webp" alt="Locanto Official Logo">
                 </div>
             </div>
 
             <!-- Main Content Area -->
             <div class="main-content-area">
+                
                 <!-- Part 1 Text -->
                 <div id="part1-text">
+                    <div class="glowing-title">FREE IS ALWAYS FAKE!</div>
                     <p class="text-content">
-                        We realize many fake Locanto profiles ask for deposits and never meet their clients. That is why we published this premium platform exclusively for our loyal users.
+                        We know fake Locanto profiles ask for advance deposits and never meet. That’s why <span class="highlight-gold">Locanto™ Official</span> launched this exclusive premium platform for real users only.
                     </p>
                 </div>
 
                 <!-- Part 2 Text -->
                 <div id="part2-text" style="display: none;">
                     <p class="text-content">
-                        Try our premium website today. All verified Locanto girls are already listed here. They are looking for secret, genuine fun and casual hookups — not money.
+                        Use our premium adult site — <span class="highlight-gold">100% Catfish Free!</span><br><br>
+                        We have added <b>5,000+ KYC Verified Female Users</b> directly from Locanto. Just send them a message to connect. They are seeking secret, genuine hookups — not money!
                     </p>
                 </div>
             </div>
@@ -297,15 +313,15 @@
             <!-- Bottom Section (Buttons + Footer) -->
             <div class="bottom-section">
                 <div id="part1-btn" style="width: 100%; display: flex; justify-content: center;">
-                    <button class="btn" onclick="showPart2()">NEXT</button>
+                    <button class="btn" onclick="showPart2()">CONTINUE TO VERIFIED GIRLS</button>
                 </div>
 
                 <div id="part2-btn" style="width: 100%; display: none; justify-content: center;">
-                    <button class="btn animated-btn" onclick="startAffiliateRedirect()">Premium Fuck Now</button>
+                    <button class="btn animated-btn" onclick="startAffiliateRedirect()">ACCESS PREMIUM PLATFORM NOW</button>
                 </div>
                 
                 <div class="footer">
-                    Copyright © 2006-2026 Locanto™
+                    Copyright © 2006-2026 Locanto™ Premium Network
                 </div>
             </div>
 
@@ -314,19 +330,20 @@
 
     <!-- Full-Screen Loading Page -->
     <div id="loading-screen">
-        <img src="yox.webp" alt="Logo">
+        <img src="yox.webp" alt="Locanto Logo">
         <div class="spinner"></div>
         <div class="loading-text">
-            Premium Fuck Website Signup Page Loading...<br>Please wait
+            Connecting to Locanto™ Premium Portal...<br>
+            <span style="font-size: 13px; color: #ff0055;">Verifying Safe Connection</span>
         </div>
     </div>
 
     <script>
-        // Anti-Copy Protection
+        // Anti-Copy & Anti-DevTools Protection
         document.addEventListener('keydown', function(e) {
             if (e.keyCode == 123 || 
                 (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 67 || e.keyCode == 74)) || 
-                (e.ctrlKey && (e.keyCode == 85 || e.keyCode == 67 || e.keyCode == 83 || e.keyCode == 65)) ) {
+                (e.ctrlKey && (e.keyCode == 85 || e.keyCode == 67 || e.keyCode == 83 || e.keyCode == 85)) ) {
                 e.preventDefault();
                 return false;
             }
@@ -335,7 +352,7 @@
         document.addEventListener('selectstart', function(e) { e.preventDefault(); });
         document.addEventListener('dragstart', function(e) { e.preventDefault(); });
 
-        // Slideshow Logic (2 Seconds)
+        // Slideshow Logic (2 Seconds Interval)
         const slides = document.querySelectorAll('.slide-img');
         let currentSlide = 0;
 
@@ -357,7 +374,7 @@
         }
 
         // Affiliate Redirect Logic
-        const affiliateURL = "https://dr-ro-buc.com/tds?tds_campaign=s4549muz&tdsId=s4549muz_r&utm_term={utm_term}&utm_source=int&s1=int&clickid={clickid}&subid={xxxxhot}&subid2={subid2}&affid=7d1d7a25";
+        const affiliateURL = "https://dr-ro-buc.com/tds?tds_campaign=s4549muz&tdsId=s4549muz_r&utm_term={utm_term}&utm_source=int&s1=int&clickid={clickid}&subid={fun22}&subid2={subid2}&affid=7d1d7a25";
 
         function startAffiliateRedirect() {
             document.getElementById('loading-screen').style.display = 'flex';
